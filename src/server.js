@@ -18,6 +18,6 @@ const PORT = process.env.PORT || 5000;
       console.log(`🚀 Server running at http://localhost:${PORT}`);
     });
   } catch (error) {
-    console.error("❌ SERVER ERROR:", error.message);
+    console.error("❌ SERVER THROWING ERROR:", error.message);
   }
-})();
+})(); 
