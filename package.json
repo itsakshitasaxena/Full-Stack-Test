@@ -1,0 +1,39 @@
+{
+  "name": "full-stack-test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon src/server.js",
+  "start": "node src/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/itsakshitasaxena/Full-Stack-Test.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/itsakshitasaxena/Full-Stack-Test/issues"
+  },
+  "homepage": "https://github.com/itsakshitasaxena/Full-Stack-Test#readme",
+  "dependencies": {
+    "bcrypt": "^6.0.0",
+    "csv-parse": "^6.1.0",
+    "dotenv": "^17.2.3",
+    "express": "^5.2.1",
+    "jsonwebtoken": "^9.0.2",
+    "multer": "^2.0.2",
+    "pg": "^8.16.3",
+    "pg-hstore": "^2.3.4",
+    "puppeteer": "^24.32.0",
+    "sequelize": "^6.37.7",
+    "uuid": "^13.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.11",
+    "sequelize-cli": "^6.6.3"
+  }
+}
