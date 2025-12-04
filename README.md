@@ -1,87 +1,310 @@
-# Full-Stack-Test
-Group 15.Wholesale / Bulk Order Management 
-System  
-1. Background  
-Unlike standard e-commerce (B2C) where customers buy single items, B2B transactions 
-involve retailers buying bulk quantities from manufacturers or distributors. This process is 
-currently plagued by manual phone orders, messy PDF catalogs, opaque pricing 
-negotiation, and complex payment terms (credit), leading to order errors and inventory 
-delays.  
-2. Challenge  
-Develop a B2B-focused commerce platform tailored for bulk purchasing. The system must 
-handle unique wholesale constraints such as Minimum Order Quantities (MOQ), tiered 
-pricing (e.g., "Buy 100, save 10%"), credit limits, and simplified re-ordering for recurring 
-buyers.  
-3. User Roles & Flow  
-Retailer (Buyer)  
-● Registration: Signs up with business details (GST/Tax ID) for verification.  
-● Catalog Browsing: Views products with wholesale pricing (often hidden from the 
-public).  
-● Bulk Ordering: Adds items to cart, respecting MOQs (e.g., "Minimum 12 units 
-required").  
-● Request for Quote (RFQ): Requests a special price for extremely large orders.  
-● Checkout: Chooses payment terms (e.g., "Credit / Net 30" or "Pay Now").  
-● Re-order: Uses a "Quick Order" feature to repeat the previous month's inventory 
-order.  
-Wholesaler (Admin/Seller)  
-● Account Approval: Verifies and approves new retailer accounts before they can see 
-prices.  
-● Pricing Engine: Sets tiered pricing rules (e.g., Price A for 1-50 units, Price B for 51+ 
-units).  
-● Inventory: Manages stock levels across large volumes.  
-● Order Processing: Reviews orders, generates invoices, and updates shipping 
-status.  
-● Credit Management: Sets credit limits for specific retailers (e.g., "Max credit 
-$5000").  
-4. Core Requirements  
-Functional  
-● Tiered Pricing Logic: The system must automatically calculate the unit price based 
-on the quantity in the cart.  
-● MOQ Enforcement: Prevent users from checking out if they haven't met the 
-minimum quantity for a specific SKU.  
-● Invoice Generation: Automated PDF invoice creation including tax breakdowns and 
-shipping details.  
-● Credit System: Ability to buy on credit, track "Amount Due," and block orders if the 
-credit limit is exceeded.  
-● Bulk Upload: Allow retailers to upload a CSV file of SKUs to fill the cart instantly 
-(instead of clicking one by one).  
-Non-Functional  
-● Data Density: The UI should be designed for efficiency (tables/grids) rather than just 
-aesthetics (big images), as buyers order hundreds of items.  
-● Precision: Financial calculations must be exact, handling taxes and volume 
-discounts correctly.  
-● Performance: Fast loading of large catalogs.  
-5. Technical Hints (Teams may choose their own stack)  
-● Frontend: React or Angular (excellent for handling complex data tables and grids).  
-● Backend: Java (Spring Boot), C# (.NET), or Node.js.  
-● Database: PostgreSQL or MySQL (Relational integrity is critical for complex pricing 
-and orders).  
-● PDF Library: Puppeteer or jsPDF for generating invoices.  
-● State Management: Redux or Context API to handle complex cart logic with tiered 
-pricing.  
-6. Hackathon Deliverables  
-● Working Prototype demonstrating:  
-○ B2B Flow: Register → Admin Approve → Buyer Log in.  
-○ Pricing Engine: Show the price changing dynamically as quantity increases in 
-the cart.  
-○ Checkout: Completion of an order using "Credit" and generation of an invoice.  
-● Database Schema: ER Diagram showing relationships between Users, Tiers, 
-Products, and Orders.  
-● Quick Order Demo: Upload a CSV or click "Reorder" to fill a cart instantly.  
-7. Judging Criteria  
-Category  
-Weight  
-B2B Logic (Handling Tiers, MOQs, Credit)  
-30%  
-Workflow Efficiency (Ease of ordering 100+ items)  
-20%  
-Document Automation (Invoice quality)  
-15%  
-User Management (KYC/Approval flows)  
-15%  
-UI/UX (Professional, data-rich interface)  
-20%  
-8. Outcome  
-A powerful digital supply chain tool that replaces manual bookkeeping with automation, 
-allowing wholesalers to scale their operations and retailers to restock inventory with speed 
-and accuracy. 
+# Group_15_Siddhant
+Hey Viewer , Its Siddhant this side ! We are having Super 150 3rd year end term exam in Hackathon Format..We are having group 15 and working under the leadership of ms. akshita saxena
+My Role : My Role in this Project is Assigned as a Backend Developer and I am making it using MERN Stack
+Commit 1 : Cloned the Repo in my local host
+Commit 2 : Started making folders in the following structure
+
+FULL_STACK_END_TERM/
+
+prisma/
+
+wholesale-backend/
+
+migrations/
+
+src/
+
+config/
+
+controllers/
+
+admin.js
+
+auth.js
+
+inventory.js
+
+order.js
+
+product.js
+
+rqf.js
+
+user.js
+
+models/
+
+Credit.js
+
+Inventory.js
+
+Order.js
+
+OrderItem.js
+
+Product.js
+
+Tier.js
+
+User.js
+
+services/
+
+credit.js
+
+inventory.js
+
+invoice.js
+
+pricing.js
+
+app.js
+
+server.js
+
+package.json
+
+.env
+
+.gitignore
+
+package-lock.json
+
+prisma.config.ts
+
+Now , I am using MySQL for Database integration and Pushed the code in my Github
+
+# 🏭 GODOWN - B2B Wholesale Order Management System
+
+**GODOWN** is a comprehensive B2B e-commerce platform designed for wholesale and bulk order management. Built with modern technologies to streamline the wholesale supply chain.
+
+## 🚀 Features
+
+### For Retailers (Buyers)
+- ✅ Business registration with GST/Tax ID verification
+- ✅ Browse products with wholesale pricing
+- ✅ Tiered pricing based on order quantity
+- ✅ Minimum Order Quantity (MOQ) enforcement
+- ✅ Request for Quote (RFQ) for custom pricing
+- ✅ Multiple payment options (Credit/Net 30/Net 60/Pay Now)
+- ✅ Quick reorder from previous orders
+- ✅ Bulk CSV upload for orders
+- ✅ Credit limit tracking and management
+
+### For Wholesalers/Admins
+- ✅ Account approval workflow
+- ✅ Product and inventory management
+- ✅ Dynamic tiered pricing engine
+- ✅ Order processing and status tracking
+- ✅ Credit limit management per retailer
+- ✅ Automated PDF invoice generation
+- ✅ RFQ management and quoting
+- ✅ Low stock alerts and reports
+
+## 🛠️ Tech Stack
+
+- **Runtime**: Node.js
+- **Framework**: Express.js
+- **Database**: MySQL
+- **ORM**: Prisma
+- **Authentication**: JWT
+- **Password Security**: bcryptjs
+- **PDF Generation**: pdfkit
+- **CSV Processing**: csv-parser
+- **File Upload**: multer
+
+## 📁 Project Structure
+
+```
+godown-backend/
+├── prisma/
+│   └── schema.prisma
+├── src/
+│   ├── config/
+│   │   └── auth.js
+│   ├── controllers/
+│   │   ├── auth.js
+│   │   ├── admin.js
+│   │   ├── inventory.js
+│   │   ├── order.js
+│   │   ├── product.js
+│   │   ├── rfq.js
+│   │   └── user.js
+│   ├── services/
+│   │   ├── pricing.js
+│   │   ├── invoice.js
+│   │   └── credit.js
+│   ├── app.js
+│   └── server.js
+├── invoices/
+├── uploads/
+├── .env
+├── .gitignore
+├── package.json
+└── README.md
+```
+
+## ⚙️ Installation
+
+### Prerequisites
+- Node.js (v16 or higher)
+- MySQL (v8 or higher)
+- npm or yarn
+
+### Step 1: Clone Repository
+```bash
+git clone <your-repo-url>
+cd godown-backend
+```
+
+### Step 2: Install Dependencies
+```bash
+npm install
+```
+
+### Step 3: Configure Environment
+Create a `.env` file in the root directory and update the values:
+```env
+DATABASE_URL="mysql://root:password@localhost:3306/godown_db"
+JWT_SECRET="your-secret-key"
+PORT=5000
+```
+
+### Step 4: Setup Database
+```bash
+# Generate Prisma Client
+npx prisma generate
+
+# Run migrations
+npx prisma migrate dev --name init
+
+# (Optional) Open Prisma Studio
+npx prisma studio
+```
+
+### Step 5: Start Server
+```bash
+# Development mode
+npm run dev
+
+# Production mode
+npm start
+```
+
+Server will be running at: `http://localhost:5000`
+
+## 📡 API Endpoints
+
+### Authentication
+- `POST /api/auth/register` - Register new retailer
+- `POST /api/auth/login` - Login user
+
+### Products
+- `GET /api/products` - Get all products
+- `GET /api/products/:id` - Get single product
+- `POST /api/products` - Create product (Admin)
+- `PUT /api/products/:id` - Update product (Admin)
+- `POST /api/products/calculate-price` - Calculate tiered price
+
+### Orders
+- `GET /api/orders` - Get user orders
+- `GET /api/orders/:id` - Get single order
+- `POST /api/orders` - Create new order
+- `POST /api/orders/bulk-upload` - Bulk upload via CSV
+- `POST /api/orders/quick-reorder` - Reorder from history
+
+### Admin
+- `GET /api/admin/accounts/pending` - Get pending accounts
+- `PATCH /api/admin/accounts/:id/status` - Approve/reject account
+- `GET /api/admin/retailers` - Get all retailers
+- `PATCH /api/admin/retailers/:id/credit` - Update credit limit
+- `GET /api/admin/orders` - Get all orders
+- `PATCH /api/admin/orders/:id/status` - Update order status
+
+### Inventory
+- `GET /api/inventory` - Get inventory status (Admin)
+- `PATCH /api/inventory/:sku` - Update stock (Admin)
+- `GET /api/inventory/alerts/low-stock` - Get low stock alerts
+
+### RFQ
+- `POST /api/rfq` - Create quote request
+- `GET /api/rfq` - Get user RFQs
+- `GET /api/rfq/all` - Get all RFQs (Admin)
+- `PATCH /api/rfq/:id` - Respond to RFQ (Admin)
+
+### User
+- `GET /api/users/profile` - Get user profile
+- `PATCH /api/users/profile` - Update profile
+- `POST /api/users/change-password` - Change password
+- `GET /api/users/credit-history` - Get credit history
+
+## 🔐 Authentication
+
+All protected routes require JWT token in header:
+```
+Authorization: Bearer <your-jwt-token>
+```
+
+## 🧪 Testing
+
+### Health Check
+```bash
+curl http://localhost:5000/health
+```
+
+### Register User
+```bash
+curl -X POST http://localhost:5000/api/auth/register \
+  -H "Content-Type: application/json" \
+  -d '{
+    "email": "test@retail.com",
+    "password": "test123",
+    "businessName": "Test Retail",
+    "contactPerson": "John Doe",
+    "phone": "1234567890"
+  }'
+```
+
+## 📊 Database Schema
+
+Key models:
+- **User** - Retailers, wholesalers, admins
+- **Product** - Products with SKU and pricing
+- **Tier** - Tiered pricing rules
+- **Order** - Purchase orders
+- **OrderItem** - Order line items
+- **RFQ** - Quote requests
+- **Credit** - Credit transactions
+- **Inventory** - Stock tracking
+
+## 🚀 Deployment
+
+### Production Checklist
+- [ ] Update `.env` with production values
+- [ ] Use strong JWT_SECRET
+- [ ] Enable HTTPS/SSL
+- [ ] Set up reverse proxy (nginx)
+- [ ] Configure rate limiting
+- [ ] Set up automated backups
+- [ ] Configure logging
+- [ ] Use PM2 for process management
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create feature branch (`git checkout -b feature/NewFeature`)
+3. Commit changes (`git commit -m 'Add NewFeature'`)
+4. Push to branch (`git push origin feature/NewFeature`)
+5. Open Pull Request
+
+## 📝 License
+
+MIT License
+
+## 📧 Support
+
+For support, email: support@godown.com
+
+---
+
+**Built with ❤️ for B2B Commerce**
