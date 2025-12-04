@@ -1,9 +1,4 @@
-# Group_15_Siddhant
-Hey Viewer , Its Siddhant this side ! We are having Super 150 3rd year end term exam in Hackathon Format..We are having group 15 and working under the leadership of ms. akshita saxena
-My Role : My Role in this Project is Assigned as a Backend Developer and I am making it using MERN Stack
-Commit 1 : Cloned the Repo in my local host
-Commit 2 : Started making folders in the following structure
-
+# Group_15
 FULL_STACK_END_TERM/
 
 prisma/
